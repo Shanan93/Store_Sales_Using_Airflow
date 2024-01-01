@@ -1,11 +1,11 @@
 from airflow import DAG
-from datetime import datetime, timedelta
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.operators.mysql_operator import MySqlOperator
 from airflow.operators.email_operator import EmailOperator
 from airflow.contrib.sensors.file_sensor import FileSensor
 
+from datetime import datetime, timedelta
 from datacleaner import data_cleaner
 
 yesterday_date = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
